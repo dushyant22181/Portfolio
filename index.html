@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <title>My Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display:ital@0;1&family=Poppins:wght@100;400;600;700;800;900&family=Roboto:wght@300;400;700&display=swap');
+        body{
+            background-color: rgb(0, 0, 0) ;
+        }
+        .welcome,.WhoisDushyant{
+            display: grid;
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap:1px;
+            padding-left: 200px;
+            padding-right: 200px;
+        }
+        .welcomescreen{   
+            padding-top: 75px;         
+        }
+        .workwithmetoday{
+            text-align: right;
+            padding-left:150px;
+            padding-right: 50px;
+            padding-top: 80px;
+            font-family: sans-serif;
+            font-size:25px;
+            font-weight: 200;
+            color: #fff;
+        }
+        .carousallinkdiv{
+            border-radius: 15px 15px;
+            background-color:rgba(72, 72, 72, 0.422) ;
+            width: 300px;
+            height: 100px;
+            position: relative;
+            left: 40%;
+            top:-45%;
+            text-align: center;
+        }
+        .buttondisplay,.carousallink,.carousallinkdiv>h6{
+            font-family: sans-serif;
+            margin:0px;
+        }
+        .carousallink{            
+            color: #ffffff;            
+            padding: 10px;
+            font-weight: 300;
+        }
+        .carousallinkdiv>h6{
+            color: #fff;
+            font-weight: 100;
+        }
+        .btn-outline-light{
+            background-color: #2a602c;
+        }
+        #welcometext{
+            font-family: "DM serif display",sans-serif;
+            font-size: 90px;
+            color: #fff;
+            margin-bottom: 80px;
+        }
+        .welcomescreen>.btn{
+            border-radius: 75px 75px;
+            transition-duration: 0.4s;
+        }
+        .welcomescreen>.btn:hover {
+            background-color: #ffffff; /* Green */
+            color: rgb(0, 0, 0);
+            box-shadow: 0 4px 6px 0 rgba(255, 255, 255, 0.167), 0 4px 6px 0 rgba(255, 255, 255, 0.14);
+        }
+        .profileimg{
+            display: block;
+            width: 400px;
+            height: 550px;
+            background-color: #00000000;
+            border-radius: 70% 50% 70% 50% / 70% 30% 70% 30%;
+            padding: 10px;
+            border: none;
+            /*filter: drop-shadow(2px 2px 5px rgb(255, 255, 255));*/
+        }
+        .profile-img{
+            padding-top: 50px;
+            padding-left: 50px;
+            
+        }
+        /* Zoom In #1 */
+        .profileimg,.image-whoisDushyant,.carousallinkdiv {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+        .profileimg:hover,.image-whoisDushyant:hover,.carousallinkdiv:hover{
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+        }
+
+        /*who is Dushyant CSS*/
+        .WhoisDushyant{
+            padding-top: 100px;
+        }
+        #WhoisDushyantText{
+            font-family: "DM serif display",sans-serif;
+            font-size: 90px;
+            color: #fff;
+            margin-bottom: 50px;
+        }
+        .Dushyant{
+            color:#3f9442;
+        }
+        #introduction,#Backgroundtext>ul,.imagesbox>p{
+            padding-top: 50px;
+            padding-bottom: 20px;
+            font-family: sans-serif;
+            font-size:25px;
+            font-weight: 200;
+            color: #fff;
+        }
+        .underline{
+            width: 150px;
+            background-color:#ffffff;
+            height: 2px;
+        }
+        .image-whoisDushyant{
+            display: block;
+            width: 500px;
+            height: 600px;
+            background-color: #00000000;
+            border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+            padding: 10px;
+            
+        }
+        .imagewhoisDushyant{
+            padding-left: 200px;
+        }
+
+        /*My Background CSS*/
+        .Projects,.Background,.MyHobbies,.Contact{
+            padding-top: 100px;
+            display: grid;
+            width: 100%;
+            height: 95vh;
+            background-color: black;
+            grid-template-columns: 1fr;
+            grid-template-rows: 180px auto;
+            gap:1px;
+            padding-top: 0px;
+            padding-left: 200px;
+            padding-right: 200px;
+        }
+        #MyBackgroundtext,#MyHobbies>h1,.ContactMe{
+            font-family: "DM serif display",sans-serif;
+            font-size: 110px;
+            color: #fff;
+            padding-bottom: 20px;
+        }
+        #Backgroundtext>ul>li{
+            list-style-position: inside;
+            font-family: sans-serif;
+            font-size:25px;
+            font-weight: 50;
+            color: #dededec4;
+            padding-left:70px;
+        }
+        #Backgroundtext{
+            padding-left: 600px;
+        }
+        /*My projects*/
+        .Projects{
+            height: 130vh!important;
+        }
+
+        /*Navbar*/
+        .navbar {
+            border-bottom: 1px solid white;
+            position: fixed;
+            width: 100%;
+            background-color: #000000c5;
+            overflow: auto;
+            justify-content: flex-start;
+            padding:0px;
+            padding-left: 200px;
+            padding-right: 200px;
+            }
+
+            /* Navbar links */
+            .navbar a {
+            float: left;
+            text-align: left;
+            padding: 12px;
+            padding-left: 20px;
+            padding-right: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            }
+
+            
+            .dropdown {
+                float: left;
+                overflow: hidden;
+                }
+                            .dropdown .dropbtn {
+                                font-size: 16px;
+                border: none;
+                outline: none;
+                color: white;
+                padding: 12px;
+                            padding-left: 20px;
+                            padding-right: 20px;
+                background-color: inherit;
+                font-family: inherit; /* Important for vertical align on mobile phones */
+                margin: 0;
+                }
+                .dropbtn>i{
+                    padding-left: 10px!important;
+                }
+
+                /* Navbar links on mouse-over */
+            .navbar a:hover, .dropdown:hover .dropbtn,.dropdown-content a:hover{
+            background-color: #2a602c; /* Green */
+            color: white;
+            box-shadow: 0 4px 6px 0 rgba(255, 255, 255, 0.167), 0 4px 6px 0 rgba(255, 255, 255, 0.14);
+            }
+
+
+            .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            }
+            .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            }
+                
+            .dropdown:hover .dropdown-content {
+            display: block;
+            }
+            .Portfolio{
+                background-color: #2a602c; /* Green */
+                font-style: italic;
+                font-family: "DM serif display",sans-serif;
+            }
+            .Contact{
+                height: 80vh;
+            }
+</style>
+</head>
+<body>
+<section title="NavBar">
+    <div class="navbar">
+        <a class="Portfolio"><div>Portfolio</div></a>
+        <a href="#welcomeSection">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">About Me<i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+                <a href="#WhoisDushyantSection">Who Am I</a>
+                <a href="#BackgroundSection">Background</a>
+                <a href="#HobbiesSection">Hobbies</a>
+            </div>
+        </div>
+        <a href="#ProjectSection">Projects</a>
+        <a href="#ContactSection">Contact</a>
+    </div>
+</section>
+<br />
+<br />
+<br />
+<section id="welcomeSection">
+    <div class="welcome">
+        <div class="welcomescreen">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill=white class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+              </svg>
+            <h1 id="welcometext">Welcome to My Front-End Portfolio</h1>
+            <button type="button" class="btn btn-outline-light btn-lg px-4"><p class="buttondisplay">Dushyant Singh / Annihilator of Pigeons</p></button>
+        </div>
+        <div class="profile-img">
+            <figure>
+            <img class="profileimg" width=1rem height= 2rem src="https://s3.zerochan.net/Erwin.Smith.240.3134681.jpg" alt="Erwin Smith" />
+        </figure>
+            <p class="workwithmetoday"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"/>
+              </svg> &nbsp Made with limited Front-End knowledge :)</p>
+        </div>
+    </div>
+</section>
+
+<section id="WhoisDushyantSection">
+    <div class="WhoisDushyant">
+        <div class="WhoisDushyantpara">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill=white class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+              </svg>
+            <h1 id="WhoisDushyantText">Who is <span class="Dushyant">Dushyant?</span></h1>
+            <p id="introduction">I'm a Btech sophomore at IIIT Delhi.<br />Recently I damaged my laptop's screen, it was a brand New Predator. So, now I'm in need of money and I see webdev as a great prospect for it.</p>
+            <div class="underline"></div>
+        </div>
+        <div class="imagewhoisDushyant">
+            <img class="image-whoisDushyant" width=1rem height= 2rem src="./Dean-Farm-Trust-Cow-2.jpg" alt="Smurf Cat" />
+        </div>
+    </div>
+</section>
+
+
+<section id="BackgroundSection">
+    <div class="Background">
+        <div id="MyBackground">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill=white class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+              </svg>
+            <h1 id="MyBackgroundtext">My Background</h1>
+        </div>
+        <div id="Backgroundtext">
+            <ul><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"/>
+              </svg> &nbsp Education
+            <li>Saint Joseph's School,2019</li>
+            <li>IIIT-Delhi,2026</li></ul>
+            <ul><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"/>
+              </svg> &nbsp Skill-set
+                <li>Literally Nothing tbh</li>
+                <li>Little bit of coding</li>
+                <li>Somewhat DSA</li>
+                <li>Terrible Designs</li>
+            </ul>
+        </div>
+        
+    </div>
+</section>
+
+<section id="HobbiesSection">
+    <div class="MyHobbies">
+        <div id="MyHobbies">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill=white class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+              </svg>
+            <h1>My Hobbies</h1>
+        </div>
+    </div>
+</section>
+
+<section id="ProjectSection">
+    <div class="Projects">
+        <div id="MyProjects">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill=white class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+              </svg>
+            <h1 id="MyBackgroundtext">My Projects</h1>
+        </div>
+        <div id="projectCarousal">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a href="link address"><img src="./images/Screenshot (172).png" class="d-block w-100" alt="..."></a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="link"><img src="./images/Screenshot (173).png" class="d-block w-100" alt="..."></a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="https://dushyant98474839.github.io/MoveWithUs/"><img src="./images/Screenshot (175).png" class="d-block w-100" alt="..."></a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="link"><img src="./images/Screenshot (176).png" class="d-block w-100" alt="..."></a>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <div class="carousallinkdiv">
+                <h4 class="carousallink">-click image to visit-<br />
+                <h6>works only for MoveWithUs since I've no money to host all sites</h6>
+                </h4>
+            </div>
+        </div>
+        
+    </div>
+</section>
+<section id="ContactSection">
+    <div class="Contact">
+        <div class="ContactMeText">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill=white class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+              </svg>
+            <h1 class="ContactMe">Reach Out to Me</h1>
+        </div>
+    </div>
+</section>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>
